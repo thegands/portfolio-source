@@ -91,6 +91,8 @@ body.video cite { color: #fff; }
     -webkit-filter: grayscale(1);
     filter: grayscale(1);
     border-radius: 50%;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 #logo h1 {
@@ -100,7 +102,7 @@ body.video cite { color: #fff; }
     -webkit-text-stroke-color: black;
     // font-weight: bold;
     letter-spacing: .1em;
-    font-family: 'Bowlby One';
+    font-family: 'Open Sans', sans-serif;
     padding-left: .1em;
 }
 
@@ -121,7 +123,7 @@ body.video cite { color: #fff; }
     display: inline-block;
     position: absolute;
     top: .35em;
-    width: 6.5em;
+    width: 5.5em;
     height: .5em;
     content: "";
     border-top: #FFF 2px solid;
@@ -169,9 +171,6 @@ body.video cite { color: #fff; }
 ------------------------------------------------------------------- */
 
 @media #{$medium-only} {
-    #logo img {
-        margin-top: 20px;
-    }
     #masthead {
         height: 280px;
     }
@@ -194,7 +193,7 @@ body.video cite { color: #fff; }
 @media #{$large-only} {
     #logo img {
         height: 200px;
-        margin-top: 30px;
+        margin-top: 20px;
         border: 5px solid #fff;
     }
     #masthead {
@@ -219,7 +218,7 @@ body.video cite { color: #fff; }
 @media #{$xlarge-up} {
     #logo img {
         height: 230px;
-        margin-top: 50px;
+        margin-top: 40px;
         border: 6px solid #fff;
     }
     #masthead {

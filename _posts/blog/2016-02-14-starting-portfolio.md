@@ -10,7 +10,6 @@ tags:
 categories:
     - blog
 header:
-    image: header_unsplash_2-970x.jpg
     pattern: pattern_worn_dots.png
         #thumb: gallery-example-3-thumb.jpg
         #title: gallery-example-3.jpg
@@ -30,7 +29,7 @@ I started by trying to assess what I wanted and what tools would best assist my 
 
 ## WordPress, because everyone's doing it
 
-The first tool that came to my mind was [WordPress][1]. WordPress can easily meet the above requirements and is incredibly simple to deploy and add content to, complete with an admin dashboard to manage and add content all within the comfort of your web browser. The biggest drawback of WordPress (and most almost all CMS systems) is it requires a server that runs server side scripting (PHP in the case of WordPress), which nearly always costs money.
+The first tool that came to my mind was [WordPress][1]. WordPress can easily meet the above requirements and is incredibly simple to deploy complete with an admin dashboard to manage and add content all within the comfort of your web browser. The biggest drawback of WordPress (and most almost all CMS systems) is it requires a server that runs server side scripting (PHP in the case of WordPress), which nearly always costs money.
 
 Even though I recently bought a year of shared hosting with PHP support I did not choose to use WordPress. I did this for several reasons:
 
@@ -52,7 +51,7 @@ To start, I created a new Jekyll site by using `jekyll new myblog` in the termin
 
 ## Paradox of Choice
 
-I soon learned that since Jekyll is so flexible, every Jekyll theme I looked at was widely different than the last. Some used front-end frameworks and some not at all. Some themes used Sass for styling and some just used plain CSS. All the themes also had varying degrees of available features like sidebars and responsive galleries. In order to make responsive design much easier for myself, I wanted a Jekyll theme that utilized a framework like Bootstrap or Foundation. After considerable shopping around and trying on different themes I settled with [Feeling Responsive][6]. I liked the bright and inviting design and it's use of [Foundation Framework][7] lends cool features like [accordion menus][8] and <a href="#" data-reveal-id="videoModal">reveal modals</a>. Foundation's grid system gave me confidence my site would look good on any screen size. Also MIT license FTW.
+I soon learned that since Jekyll is so flexible, every Jekyll theme I looked at was widely different than the last. Some used front-end frameworks and some not at all. Some themes used Sass for styling and some just used plain CSS. All the themes also had varying degrees of available features like sidebars and responsive galleries. In order to make responsive design much easier for myself, I wanted a Jekyll theme that utilized a framework like Bootstrap or Foundation. After considerable shopping around and trying on different themes I settled with [Feeling Responsive][6]. I liked the bright and inviting design and it's use of [Foundation Framework][7] lends cool features like [accordion menus][8] and <a href="#" data-reveal-id="videoModal">reveal modals</a>. Furthermore, Foundation's grid system gave me confidence my site would look good on any screen size. Also MIT license FTW.
 
 ## Making it Mine
 

@@ -5,7 +5,7 @@ title: "About Me"
 teaser: "I'm a born and raised Coloradan that loves computers, virtual 3D and programming for the web!"
 permalink: "/about/"
 header:
-    image_fullwidth: "header_drop.jpg"
+    image_fullwidth: "header_mountain.jpg"
 ---
 {% comment %}
 ...and learn at the same time.
