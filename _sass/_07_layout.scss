@@ -85,11 +85,64 @@ body.video cite { color: #fff; }
     margin-top: 60px;
 }
 
+#logo img {
+    height: 180px;
+    border: 4px solid #fff;
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
+    border-radius: 50%;
+}
+
+#logo h1 {
+    color: black;
+    -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+    // font-weight: bold;
+    letter-spacing: .1em;
+    font-family: 'Bowlby One';
+    padding-left: .1em;
+}
+
+#logo h4 {
+    margin-top: -15px;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    background-color: black;
+    border-radius: 0 0 5px 5px;
+}
+
+#logo span {
+  position: relative;
+}
+
+.underline-with-text span::after, .underline-with-text span::before {
+    display: inline-block;
+    position: absolute;
+    top: .35em;
+    width: 6.5em;
+    height: .5em;
+    content: "";
+    border-top: #FFF 2px solid;
+    border-bottom: #FFF 2px solid;
+}
+
+.underline-with-text span::before {
+    right: 100%;
+    margin-right: 2px;
+}
+
+.underline-with-text span::after {
+    left: 100%;
+    margin-left: 2px;
+}
+
 /* Masthead › small-only
 ------------------------------------------------------------------- */
 
 @media #{$small-only} {
-    #logo img {
+    #logo * {
         display: none;
     }
     #masthead {
@@ -117,7 +170,7 @@ body.video cite { color: #fff; }
 
 @media #{$medium-only} {
     #logo img {
-        margin-top: 60px;
+        margin-top: 20px;
     }
     #masthead {
         height: 280px;
@@ -140,7 +193,9 @@ body.video cite { color: #fff; }
 
 @media #{$large-only} {
     #logo img {
-        margin-top: 80px;
+        height: 200px;
+        margin-top: 30px;
+        border: 5px solid #fff;
     }
     #masthead {
         height: 310px;
@@ -163,7 +218,9 @@ body.video cite { color: #fff; }
 
 @media #{$xlarge-up} {
     #logo img {
-        margin-top: 110px;
+        height: 230px;
+        margin-top: 50px;
+        border: 6px solid #fff;
     }
     #masthead {
         height: 380px;
@@ -177,6 +234,16 @@ body.video cite { color: #fff; }
     #masthead-with-text {
         padding: 95px 0;
         height: 400px;
+    }
+    #logo h1 {
+        font-size: 2.75em;
+    }
+
+    #logo h4 {
+        font-size: 1.4375em;
+    }
+    .underline-with-text span::after, .underline-with-text span::before {
+        top: .3em;
     }
 }
 
@@ -316,9 +383,9 @@ body.video cite { color: #fff; }
     padding: 0 0 20px 0;
   }
   a {
-    font-size: rem-calc(23);
+    font-size: rem-calc(46);
     display: block;
-    width: 36px;
+    width: 72px;
     border-radius: 50%;
     color: $subfooter-bg;
     background: $subfooter-color;

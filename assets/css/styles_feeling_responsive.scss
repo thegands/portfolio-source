@@ -32,13 +32,17 @@ sitemap:
 @import "foundation-components/side-nav";
 @import "foundation-components/sub-nav";
 @import "foundation-components/tables";
+@import "foundation-components/tabs";
 @import "foundation-components/thumbs";
 @import "foundation-components/top-bar";
 @import "foundation-components/type";
 @import "foundation-components/visibility";
 
 @import "06_typography.scss";
+@import "custom_typography.scss";
+@import "font-awesome/font-awesome";
 @import "07_layout.scss";
+@import "custom_layout.scss";
 @import "foundation-components/grid";
 @import "09_elements.scss";
 

@@ -810,7 +810,7 @@ function FastClick(a,b){"use strict";function c(a,b){return function(){return a.
 
       // comma delimited list of selectors that, on click, will close clearing,
       // add 'div.clearing-blackout, div.visible-img' to close on background click
-      close_selectors : '.clearing-close, div.clearing-blackout', 
+      close_selectors : '.clearing-close, div.clearing-blackout',
 
       // Default to the entire li element.
       open_selectors : '',
@@ -954,7 +954,7 @@ function FastClick(a,b){"use strict";function c(a,b){return function(){return a.
       if ($el.parent().hasClass('carousel')) {
         return;
       }
-      
+
       $el.after('<div id="foundationClearingHolder"></div>');
 
       var grid = $el.detach(),
@@ -965,7 +965,7 @@ function FastClick(a,b){"use strict";function c(a,b){return function(){return a.
       } else {
         grid_outerHTML = grid[0].outerHTML;
       }
-      
+
       var holder = this.S('#foundationClearingHolder'),
           settings = $el.data(this.attr_name(true) + '-init'),
           data = {
@@ -1066,7 +1066,7 @@ function FastClick(a,b){"use strict";function c(a,b){return function(){return a.
           .removeClass('clearing-blackout');
         container.removeClass('clearing-container');
         visible_image.hide();
-        visible_image.trigger('closed.fndtn.clearing');        
+        visible_image.trigger('closed.fndtn.clearing');
       }
 
       // Event to re-enable scrolling on touch devices
@@ -1230,7 +1230,7 @@ function FastClick(a,b){"use strict";function c(a,b){return function(){return a.
           .hide();
       }
       return this;
-    }, 
+    },
 
     // directional methods
 
@@ -1422,7 +1422,7 @@ function FastClick(a,b){"use strict";function c(a,b){return function(){return a.
 
           if ($this.data(self.data_attr())) {
               settings = $this.data(self.data_attr(true) + '-init') || self.settings;
-          } 
+          }
           else {
               var target   = S('[' + self.attr_name() + '="' + S(this).attr('id') + '"]'),
                   settings = target.data(self.attr_name(true) + '-init') || self.settings;
@@ -1593,13 +1593,13 @@ function FastClick(a,b){"use strict";function c(a,b){return function(){return a.
 
         p.top -= o.top;
         p.left -= o.left;
-        
+
         //set some flags on the p object to pass along
         p.missRight = false;
         p.missTop = false;
         p.missLeft = false;
         p.leftRightFlag = false;
-    
+
         //lets see if the panel will be off the screen
         //get the actual width of the page and store it
         var actualBodyWidth;
@@ -1611,7 +1611,7 @@ function FastClick(a,b){"use strict";function c(a,b){return function(){return a.
 
         var actualMarginWidth = (window.outerWidth - actualBodyWidth) / 2;
         var actualBoundary = actualBodyWidth;
-    
+
         if (!this.hasClass('mega')) {
           //miss top
           if (t.offset().top <= this.outerHeight()) {
@@ -1619,13 +1619,13 @@ function FastClick(a,b){"use strict";function c(a,b){return function(){return a.
             actualBoundary = window.outerWidth - actualMarginWidth;
             p.leftRightFlag = true;
           }
-          
+
           //miss right
           if (t.offset().left + this.outerWidth() > t.offset().left + actualMarginWidth && t.offset().left - actualMarginWidth > this.outerWidth()) {
             p.missRight = true;
             p.missLeft = false;
           }
-          
+
           //miss left
           if (t.offset().left - this.outerWidth() <= 0) {
             p.missLeft = true;
@@ -1641,12 +1641,12 @@ function FastClick(a,b){"use strict";function c(a,b){return function(){return a.
             p = self.dirs._base.call(this, t);
 
         this.addClass('drop-top');
-        
+
         if (p.missTop == true) {
           p.top = p.top + t.outerHeight() + this.outerHeight();
           this.removeClass('drop-top');
         }
-    
+
         if (p.missRight == true) {
           p.left = p.left - this.outerWidth() + t.outerWidth();
         }
@@ -1686,7 +1686,7 @@ function FastClick(a,b){"use strict";function c(a,b){return function(){return a.
         var p = Foundation.libs.dropdown.dirs._base.call(this, t);
 
         this.addClass('drop-left');
-        
+
         if (p.missLeft == true) {
           p.left =  p.left + this.outerWidth();
           p.top = p.top + t.outerHeight();
@@ -1700,7 +1700,7 @@ function FastClick(a,b){"use strict";function c(a,b){return function(){return a.
         var p = Foundation.libs.dropdown.dirs._base.call(this, t);
 
         this.addClass('drop-right');
-        
+
         if (p.missRight == true) {
           p.left = p.left - this.outerWidth();
           p.top = p.top + t.outerHeight();
@@ -1708,7 +1708,7 @@ function FastClick(a,b){"use strict";function c(a,b){return function(){return a.
         } else {
           p.triggeredRight = true;
         }
-    
+
         var self = Foundation.libs.dropdown;
 
         if (t.outerWidth() < this.outerWidth() || self.small() || this.hasClass(s.mega_menu)) {
@@ -1738,7 +1738,7 @@ function FastClick(a,b){"use strict";function c(a,b){return function(){return a.
           sel_after  = '.f-dropdown.open:after',
           css_before = 'left: ' + pip_offset_base + 'px;',
           css_after  = 'left: ' + (pip_offset_base - 1) + 'px;';
-        
+
       if (position.missRight == true) {
         pip_offset_base = dropdown.outerWidth() - 23;
         sel_before = '.f-dropdown.open:before',
@@ -1746,7 +1746,7 @@ function FastClick(a,b){"use strict";function c(a,b){return function(){return a.
         css_before = 'left: ' + pip_offset_base + 'px;',
         css_after  = 'left: ' + (pip_offset_base - 1) + 'px;';
       }
-    
+
       //just a case where right is fired, but its not missing right
       if (position.triggeredRight == true) {
         sel_before = '.f-dropdown.open:before',
@@ -1880,7 +1880,7 @@ function FastClick(a,b){"use strict";function c(a,b){return function(){return a.
       throttle_delay: 30, // calculation throttling to increase framerate
       fixed_top: 0, // top distance in pixels assigend to the fixed element on scroll
       offset_by_height: true,  // whether to offset the destination by the expedition height. Usually you want this to be true, unless your expedition is on the side.
-      duration: 700, // animation duration time 
+      duration: 700, // animation duration time
       easing: 'swing' // animation easing
     },
 
@@ -2513,6 +2513,224 @@ function FastClick(a,b){"use strict";function c(a,b){return function(){return a.
 ;(function ($, window, document, undefined) {
   'use strict';
 
+  Foundation.libs.tab = {
+    name : 'tab',
+
+    version : '5.5.0',
+
+    settings : {
+      active_class: 'active',
+      callback : function () {},
+      deep_linking: false,
+      scroll_to_content: true,
+      is_hover: false
+    },
+
+    default_tab_hashes: [],
+
+    init : function (scope, method, options) {
+      var self = this,
+          S = this.S;
+
+      this.bindings(method, options);
+      this.handle_location_hash_change();
+
+      // Store the default active tabs which will be referenced when the
+      // location hash is absent, as in the case of navigating the tabs and
+      // returning to the first viewing via the browser Back button.
+      S('[' + this.attr_name() + '] > .active > a', this.scope).each(function () {
+        self.default_tab_hashes.push(this.hash);
+      });
+    },
+
+    events : function () {
+      var self = this,
+          S = this.S;
+
+      var usual_tab_behavior =  function (e) {
+          var settings = S(this).closest('[' + self.attr_name() +']').data(self.attr_name(true) + '-init');
+          if (!settings.is_hover || Modernizr.touch) {
+            e.preventDefault();
+            e.stopPropagation();
+            self.toggle_active_tab(S(this).parent());
+          }
+        };
+
+      S(this.scope)
+        .off('.tab')
+        // Click event: tab title
+        .on('focus.fndtn.tab', '[' + this.attr_name() + '] > * > a', usual_tab_behavior )
+        .on('click.fndtn.tab', '[' + this.attr_name() + '] > * > a', usual_tab_behavior )
+        // Hover event: tab title
+        .on('mouseenter.fndtn.tab', '[' + this.attr_name() + '] > * > a', function (e) {
+          var settings = S(this).closest('[' + self.attr_name() +']').data(self.attr_name(true) + '-init');
+          if (settings.is_hover) self.toggle_active_tab(S(this).parent());
+        });
+
+      // Location hash change event
+      S(window).on('hashchange.fndtn.tab', function (e) {
+        e.preventDefault();
+        self.handle_location_hash_change();
+      });
+    },
+
+    handle_location_hash_change : function () {
+
+      var self = this,
+          S = this.S;
+
+      S('[' + this.attr_name() + ']', this.scope).each(function () {
+        var settings = S(this).data(self.attr_name(true) + '-init');
+        if (settings.deep_linking) {
+          // Match the location hash to a label
+          var hash;
+          if (settings.scroll_to_content) {
+            hash = self.scope.location.hash;
+          } else {
+            // prefix the hash to prevent anchor scrolling
+            hash = self.scope.location.hash.replace('fndtn-', '');
+          }
+          if (hash != '') {
+            // Check whether the location hash references a tab content div or
+            // another element on the page (inside or outside the tab content div)
+            var hash_element = S(hash);
+            if (hash_element.hasClass('content') && hash_element.parent().hasClass('tabs-content')) {
+              // Tab content div
+              self.toggle_active_tab($('[' + self.attr_name() + '] > * > a[href=' + hash + ']').parent());
+            } else {
+              // Not the tab content div. If inside the tab content, find the
+              // containing tab and toggle it as active.
+              var hash_tab_container_id = hash_element.closest('.content').attr('id');
+              if (hash_tab_container_id != undefined) {
+                self.toggle_active_tab($('[' + self.attr_name() + '] > * > a[href=#' + hash_tab_container_id + ']').parent(), hash);
+              }
+            }
+          } else {
+            // Reference the default tab hashes which were initialized in the init function
+            for (var ind = 0; ind < self.default_tab_hashes.length; ind++) {
+              self.toggle_active_tab($('[' + self.attr_name() + '] > * > a[href=' + self.default_tab_hashes[ind] + ']').parent());
+            }
+          }
+        }
+       });
+     },
+
+    toggle_active_tab: function (tab, location_hash) {
+      var S = this.S,
+          tabs = tab.closest('[' + this.attr_name() + ']'),
+          tab_link = tab.find('a'),
+          anchor = tab.children('a').first(),
+          target_hash = '#' + anchor.attr('href').split('#')[1],
+          target = S(target_hash),
+          siblings = tab.siblings(),
+          settings = tabs.data(this.attr_name(true) + '-init'),
+          interpret_keyup_action = function(e) {
+            // Light modification of Heydon Pickering's Practical ARIA Examples: http://heydonworks.com/practical_aria_examples/js/a11y.js
+
+            // define current, previous and next (possible) tabs
+
+            var $original = $(this);
+            var $prev = $(this).parents('li').prev().children('[role="tab"]');
+            var $next = $(this).parents('li').next().children('[role="tab"]');
+            var $target;
+
+            // find the direction (prev or next)
+
+            switch (e.keyCode) {
+              case 37:
+                $target = $prev;
+                break;
+              case 39:
+                $target = $next;
+                break;
+              default:
+                $target = false
+                  break;
+            }
+
+            if ($target.length) {
+              $original.attr({
+                'tabindex' : '-1',
+                'aria-selected' : null
+              });
+              $target.attr({
+                'tabindex' : '0',
+                'aria-selected' : true
+              }).focus();
+            }
+
+            // Hide panels
+
+            $('[role="tabpanel"]')
+              .attr('aria-hidden', 'true');
+
+            // Show panel which corresponds to target
+
+            $('#' + $(document.activeElement).attr('href').substring(1))
+              .attr('aria-hidden', null);
+
+          };
+
+      // allow usage of data-tab-content attribute instead of href
+      if (S(this).data(this.data_attr('tab-content'))) {
+        target_hash = '#' + S(this).data(this.data_attr('tab-content')).split('#')[1];
+        target = S(target_hash);
+      }
+
+      if (settings.deep_linking) {
+
+        if (settings.scroll_to_content) {
+          // retain current hash to scroll to content
+          window.location.hash = location_hash || target_hash;
+          if (location_hash == undefined || location_hash == target_hash) {
+            tab.parent()[0].scrollIntoView();
+          } else {
+            S(target_hash)[0].scrollIntoView();
+          }
+        } else {
+          // prefix the hashes so that the browser doesn't scroll down
+          if (location_hash != undefined) {
+            window.location.hash = 'fndtn-' + location_hash.replace('#', '');
+          } else {
+            window.location.hash = 'fndtn-' + target_hash.replace('#', '');
+          }
+        }
+      }
+
+      // WARNING: The activation and deactivation of the tab content must
+      // occur after the deep linking in order to properly refresh the browser
+      // window (notably in Chrome).
+      // Clean up multiple attr instances to done once
+      tab.addClass(settings.active_class).triggerHandler('opened');
+      tab_link.attr({'aria-selected': 'true',  tabindex: 0});
+      siblings.removeClass(settings.active_class)
+      siblings.find('a').attr({'aria-selected': 'false',  tabindex: -1});
+      target.siblings().removeClass(settings.active_class).attr({'aria-hidden': 'true',  tabindex: -1});
+      target.addClass(settings.active_class).attr('aria-hidden', 'false').removeAttr('tabindex');
+      settings.callback(tab);
+      target.triggerHandler('toggled', [tab]);
+      tabs.triggerHandler('toggled', [target]);
+
+      tab_link.off('keydown').on('keydown', interpret_keyup_action );
+    },
+
+    data_attr: function (str) {
+      if (this.namespace.length > 0) {
+        return this.namespace + '-' + str;
+      }
+
+      return str;
+    },
+
+    off : function () {},
+
+    reflow : function () {}
+  };
+}(jQuery, window, window.document));
+
+;(function ($, window, document, undefined) {
+  'use strict';
+
   Foundation.libs.reveal = {
     name : 'reveal',
 
@@ -2561,7 +2779,7 @@ function FastClick(a,b){"use strict";function c(a,b){return function(){return a.
         .off('.reveal')
         .on('click.fndtn.reveal', '[' + this.add_namespace('data-reveal-id') + ']:not([disabled])', function (e) {
           e.preventDefault();
-        
+
           if (!self.locked) {
             var element = S(this),
                 ajax = element.data(self.data_attr('reveal-ajax'));
@@ -2754,7 +2972,7 @@ function FastClick(a,b){"use strict";function c(a,b){return function(){return a.
     toggle_bg : function (el, modal, state) {
       var settings = el.data(this.attr_name(true) + '-init') || this.settings,
             bg_root_element = settings.bg_root_element; // Adding option to specify the background root element fixes scrolling issue
-      
+
       if (this.S('.' + this.settings.bg_class).length === 0) {
         this.settings.bg = $('<div />', {'class': this.settings.bg_class})
           .appendTo(bg_root_element).hide();
@@ -3036,7 +3254,7 @@ function FastClick(a,b){"use strict";function c(a,b){return function(){return a.
   };
 
   /* STYLES
-   * 
+   *
    * Baked-in styles that we'll apply to our elements.
    * In an effort to keep the plugin simple, these are not exposed as options.
    * That said, anyone can override these in their own stylesheet.
@@ -3080,7 +3298,7 @@ function FastClick(a,b){"use strict";function c(a,b){return function(){return a.
     // Preload images
     $.each(this.images, function () {
       $('<img />')[0].src = this;
-    });    
+    });
 
     // Convenience reference to know if the container is body.
     this.isBody = container === document.body;
@@ -3110,7 +3328,7 @@ function FastClick(a,b){"use strict";function c(a,b){return function(){return a.
         , zIndex: zIndex === 'auto' ? 0 : zIndex
         , background: 'none'
       });
-      
+
       // Needs a higher z-index
       this.$wrap.css({zIndex: -999998});
     }
@@ -3186,7 +3404,7 @@ function FastClick(a,b){"use strict";function c(a,b){return function(){return a.
           , evtOptions = { relatedTarget: self.$container[0] };
 
         // Trigger the "before" event
-        self.$container.trigger($.Event('backstretch.before', evtOptions), [self, newIndex]); 
+        self.$container.trigger($.Event('backstretch.before', evtOptions), [self, newIndex]);
 
         // Set the new index
         this.index = newIndex;
@@ -3200,7 +3418,7 @@ function FastClick(a,b){"use strict";function c(a,b){return function(){return a.
                       .bind('load', function (e) {
                         var imgWidth = this.width || $(e.target).width()
                           , imgHeight = this.height || $(e.target).height();
-                        
+
                         // Save the ratio
                         $(this).data('ratio', imgWidth / imgHeight);
 
@@ -3279,7 +3497,7 @@ function FastClick(a,b){"use strict";function c(a,b){return function(){return a.
 
         // Remove Backstretch
         if(!preserveBackground) {
-          this.$wrap.remove();          
+          this.$wrap.remove();
         }
         this.$container.removeData('backstretch');
       }
@@ -3314,23 +3532,23 @@ function FastClick(a,b){"use strict";function c(a,b){return function(){return a.
     return !(
       // iOS 4.3 and older : Platform is iPhone/Pad/Touch and Webkit version is less than 534 (ios5)
       ((platform.indexOf( "iPhone" ) > -1 || platform.indexOf( "iPad" ) > -1  || platform.indexOf( "iPod" ) > -1 ) && wkversion && wkversion < 534) ||
-      
+
       // Opera Mini
       (window.operamini && ({}).toString.call( window.operamini ) === "[object OperaMini]") ||
       (operammobilematch && omversion < 7458) ||
-      
+
       //Android lte 2.1: Platform is Android and Webkit version is less than 533 (Android 2.2)
       (ua.indexOf( "Android" ) > -1 && wkversion && wkversion < 533) ||
-      
+
       // Firefox Mobile before 6.0 -
       (ffversion && ffversion < 6) ||
-      
+
       // WebOS less than 3
       ("palmGetResource" in window && wkversion && wkversion < 534) ||
-      
+
       // MeeGo
       (ua.indexOf( "MeeGo" ) > -1 && ua.indexOf( "NokiaBrowser/8.5.0" ) > -1) ||
-      
+
       // IE6
       (ieversion && ieversion <= 6)
     );
@@ -3346,4 +3564,7 @@ $(document).foundation({
       animation: 'fade',
   animation_speed: 250
   }
+});
+$('.tabs').on('toggled', function (event, tab) {
+  scrollBy(0, -50)
 });
