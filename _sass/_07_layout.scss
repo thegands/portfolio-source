@@ -100,7 +100,6 @@ body.video cite { color: #fff; }
     -webkit-text-fill-color: white; /* Will override color (regardless of order) */
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: black;
-    // font-weight: bold;
     letter-spacing: .1em;
     font-family: 'Open Sans', sans-serif;
     padding-left: .1em;
@@ -143,8 +142,23 @@ body.video cite { color: #fff; }
 ------------------------------------------------------------------- */
 
 @media #{$small-only} {
-    #logo * {
+    .underline-with-text span::after, .underline-with-text span::before {
         display: none;
+    }
+    #logo {
+        img {
+            height: 140px;
+        }
+        .background {
+            h1 {
+                display: none;
+            }
+            h4 {
+                border-radius: 5px;
+                padding: 0 5px;
+                white-space: nowrap;
+            }
+        }
     }
     #masthead {
         height: 200px;
@@ -215,6 +229,9 @@ body.video cite { color: #fff; }
 ------------------------------------------------------------------- */
 
 @media #{$xlarge-up} {
+    .underline-with-text span::after, .underline-with-text span::before {
+        width: 5.3em;
+    }
     #logo img {
         height: 230px;
         margin-top: 40px;
