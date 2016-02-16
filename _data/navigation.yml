@@ -3,7 +3,7 @@
   side: left
 
 - title: "Projects"
-  url: "/projects/"
+  url: "https://github.com/thegands?tab=repositories"
   side: left
   dropdown:
   - title: "LinkPlayer"

@@ -9,11 +9,10 @@ tags:
     - portfolio
 categories:
     - blog
-header:
-    pattern: pattern_worn_dots.png
-        #thumb: gallery-example-3-thumb.jpg
-        #title: gallery-example-3.jpg
-        #caption_url: http://unsplash.com
+header: no
+image:
+    title: octojekyll.png
+    thumb: jekyll-thumb.jpg
 ---
 After many more hours than I care to admit my portfolio and blog is finally live! I created this site as an easy way to record and publish my thoughts on web development as I am learning with additional pages dedicated to showcasing my personality and coding abilities. So for my very first blog post I decided to write my thought process on the creation of this site!
 
