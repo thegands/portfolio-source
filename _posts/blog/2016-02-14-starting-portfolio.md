@@ -26,7 +26,7 @@ I started by trying to assess what I wanted and what tools would best assist my 
 
 * Live code examples with links to repositories
 
-## WordPress, because everyone's doing it
+## <i class="fa fa-wordpress"></i> &mdash; Everyone uses it
 
 The first tool that came to my mind was [WordPress][1]. WordPress can easily meet the above requirements and is incredibly simple to deploy complete with an admin dashboard to manage and add content all within the comfort of your web browser. The biggest drawback of WordPress (and most almost all CMS systems) is it requires a server that runs server side scripting (PHP in the case of WordPress), which nearly always costs money.
 
@@ -54,7 +54,7 @@ I soon learned that since Jekyll is so flexible every Jekyll theme I looked at w
 
 ## Making it Mine
 
-Now that I had settled on a theme I needed to add my own content and put my own touches on the design. I started by adding my portrait as a logo along with cleaning up the navbar and front page since my site would be much simpler than the template's example. Soon I noticed the [icon set][9] that came integrated into the Feeling Responsive theme left much to be desired. I preferred [Font Awesome][10] for it's massive selection of icons but I had to figure out how to integrate it into my theme's existing Sass.
+Now that I had settled on a theme I needed to add my own content and put my own touches on the design. I started by adding my portrait as a logo along with cleaning up the navbar and front page since my site would be much simpler than the template's example. Soon I noticed the [icon set][9] integrated into the Feeling Responsive theme left much to be desired. I preferred [Font Awesome][10] for it's massive selection of icons but I had to figure out how to integrate it into my theme's existing Sass.
 
 Good thing Sass is easy to work with! In order to get Font Awesome working on my site I just had to copy it's `fonts/` and `scss/` directories into my site's respective directories. After that it was as simple as adding `@import "font-awesome/font-awesome";` to my site's primary Sass file and replacing the old icon HTML with awesome ones. <i class="fa fa-smile-o"></i>
 
