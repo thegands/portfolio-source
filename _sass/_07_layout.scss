@@ -118,25 +118,25 @@ body.video cite { color: #fff; }
   position: relative;
 }
 
-.underline-with-text span::after, .underline-with-text span::before {
-    display: inline-block;
-    position: absolute;
-    top: .35em;
-    width: 5.5em;
-    height: .5em;
-    content: "";
-    border-top: #FFF 2px solid;
-    border-bottom: #FFF 2px solid;
-}
-
-.underline-with-text span::before {
-    right: 100%;
-    margin-right: 2px;
-}
-
-.underline-with-text span::after {
-    left: 100%;
-    margin-left: 2px;
+.underline-with-text {
+    span::after, span::before {
+        display: inline-block;
+        position: absolute;
+        top: .35em;
+        width: 5.5em;
+        height: .5em;
+        content: "";
+        border-top: #FFF 2px solid;
+        border-bottom: #FFF 2px solid;
+    }
+    span::before {
+        right: 100%;
+        margin-right: 2px;
+    }
+    span::after {
+        left: 100%;
+        margin-left: 2px;
+    }
 }
 
 /* Masthead › small-only
@@ -155,8 +155,9 @@ body.video cite { color: #fff; }
                 display: none;
             }
             h4 {
+                margin-top: 0;
                 border-radius: 5px;
-                padding: 0 5px;
+                padding: 2px 5px 0 5px;
                 white-space: nowrap;
             }
         }
@@ -230,8 +231,11 @@ body.video cite { color: #fff; }
 ------------------------------------------------------------------- */
 
 @media #{$xlarge-up} {
-    .underline-with-text span::after, .underline-with-text span::before {
-        width: 5.3em;
+    .underline-with-text {
+          span::after, span::before {
+              width: 5.3em;
+              top: .35em;
+          }
     }
     #logo img {
         height: 230px;
@@ -257,9 +261,6 @@ body.video cite { color: #fff; }
 
     #logo h4 {
         font-size: 1.4375em;
-    }
-    .underline-with-text span::after, .underline-with-text span::before {
-        top: .3em;
     }
 }
 

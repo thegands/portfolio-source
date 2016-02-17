@@ -5,10 +5,25 @@ div.flex-video.contact-form {
     height: 1153px;
 }
 
-#logo div.background {
-    background-color: white;
-    border-radius: 5px;
-    display: inline-block;
+#logo {
+    div.background {
+        background-color: white;
+        border-radius: 5px;
+        display: table;
+        margin: auto;
+    }
+    img {
+        transition-duration: .5s;
+        transition-property: all;
+        &:hover {
+            -webkit-filter: grayscale(0);
+            filter: grayscale(0);
+            border-radius: 20%;
+            transform:scale(1.1);
+            position:relative;
+            z-index:1
+        }
+    }
 }
 
 #subfooter ul {
