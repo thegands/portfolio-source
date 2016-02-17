@@ -28,7 +28,7 @@ I started by trying to assess what I wanted and what tools would best assist my 
 
 ## <i class="fa fa-wordpress"></i> &mdash; Everyone uses it
 
-The first tool that came to my mind was [WordPress][1]. WordPress can easily meet the above requirements and is incredibly simple to deploy complete with an admin dashboard to manage and add content all within the comfort of your web browser. The biggest drawback of WordPress (and most almost all CMS systems) is it requires a server that runs server side scripting (PHP in the case of WordPress), which nearly always costs money.
+The first tool that came to my mind was [WordPress][1]. WordPress can easily meet the above requirements and is incredibly simple to deploy complete with an admin dashboard to manage and add content all within the comfort of your web browser. The biggest drawback of WordPress (and almost all CMS systems) is it requires a server that runs server side scripting (PHP in the case of WordPress), which nearly always costs money.
 
 Even though I recently bought a year of shared hosting with PHP support I did not choose to use WordPress. I did this for several reasons:
 
