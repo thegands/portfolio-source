@@ -2,16 +2,20 @@
 
 - name: "Contact"
   url: "/contact/"
+  icon: fa-envelope
   title: "Contact"
 
 - name: "RSS"
   url: "/feed.xml"
+  icon: fa-rss
   title: "Subscribe to RSS Feed"
 
 - name: "Atom"
   url: "/atom.xml"
+  icon: fa-rss
   title: "Subscribe to Atom Feed"
 
 - name: "sitemap.xml"
   url: "/sitemap.xml"
+  icon: fa-sitemap
   title: "Sitemap for Google Webmaster Tools"

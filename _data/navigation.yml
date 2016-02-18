@@ -17,7 +17,7 @@
 
 - title: Blog
   url: "/blog/"
-  icon: fa-pencil-square-o
+  icon: fa-book
   side: left
   dropdown:
   - title: "Blog Archive"

@@ -29,7 +29,7 @@
               {% for service_item in site.data.services %}
                 {% if service_item.url contains 'http' %}{% assign domain = '' %}{% else %}{% assign domain = site.url + site.baseurl %}{% endif %}
                   <li {% if service_item.class %}class="{{ service_item.class }}" {% endif %}>
-                    <a href="{{ domain }}{{ service_item.url }}" {% if service_item.url contains 'http' %}target="_blank" {% endif %} title="{{ service_item.title }}">{{ service_item.name }}</a>
+                    <a href="{{ domain }}{{ service_item.url }}" {% if service_item.url contains 'http' %}target="_blank" {% endif %} title="{{ service_item.title }}">{% if service_item.icon %}<i class="fa fa-fw {{ service_item.icon }}"></i> {% endif %}{{ service_item.name }}</a>
                   </li>
               {% endfor %}
               </ul>
