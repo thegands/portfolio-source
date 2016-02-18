@@ -8,6 +8,11 @@
   class: fa-linkedin
   title: My LinkedIn Profile
 
+- name: Email
+  url: thegands@gmail.com
+  class: fa-envelope-o
+  title: Email Gandhi
+
 # - name: YouTube
 #   url: http://www.youtube.com/PhlowMedia
 #   class: icon-youtube

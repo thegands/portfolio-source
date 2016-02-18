@@ -62,7 +62,11 @@
           <section class="small-12 columns text-center">
             <ul class="inline-list social-icons text-center">
             {% for social_item in site.data.socialmedia %}
+              {% if social_item.name != 'Email' %}
               <li><a href="{{ social_item.url }}" target="_blank" title="{{ social_item.title }}"><i class="fa fa-fw {{ social_item.class }}"></i></a></li>
+              {% else %}
+              <li><a href="mailto:{{ social_item.url }}" title="{{ social_item.title }}"><i class="fa fa-fw {{ social_item.class }}"></i></a></li>
+              {% endif %}
             {% endfor %}
             </ul>
           </section>
