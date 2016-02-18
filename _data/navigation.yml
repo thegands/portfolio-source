@@ -1,9 +1,11 @@
 - title: Front
   url: "/"
+  icon: fa-home
   side: left
 
 - title: "Projects"
   url: "https://github.com/thegands?tab=repositories"
+  icon: fa-flask
   side: left
   dropdown:
   - title: "LinkPlayer"
@@ -15,19 +17,24 @@
 
 - title: Blog
   url: "/blog/"
+  icon: fa-pencil-square-o
   side: left
   dropdown:
   - title: "Blog Archive"
     url: "/blog/archive/"
+    icon: fa-archive
 
 - title: About
   url: "/about/"
+  icon: fa-male
   side: left
 
 - title: "Contact"
   url: "/contact/"
+  icon: fa-envelope
   side: left
 
 - title: "Search"
   url: "/search/"
+  icon: fa-search
   side: right
