@@ -21,11 +21,15 @@ div.flex-video.contact-form {
             border-radius: 20%;
             transform:scale(1.1);
             position:relative;
-            z-index:1
+            z-index:1;
         }
     }
 }
 
 #subfooter ul {
     display: inline-block;
+}
+
+#masthead-no-image-header .small-12.columns {
+    z-index: 1;
 }
