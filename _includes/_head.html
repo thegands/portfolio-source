@@ -26,11 +26,7 @@
 
 	<script type="text/javascript">
 	  WebFontConfig = {
-			{% if page.title == "Search" %}
-	    google: { families: [ 'Lato:400,700,400italic:latin', 'Volkhov::latin', 'Open+Sans:700:latin', 'Product+Sans::latin' ] }
-			{% else %}
 	    google: { families: [ 'Lato:400,700,400italic:latin', 'Volkhov::latin', 'Open+Sans:700:latin' ] }
-			{% endif %}
 	  };
 	  (function() {
 	    var wf = document.createElement('script');
@@ -43,11 +39,7 @@
 	  })(); </script>
 
 	<noscript>
-		{% if page.title == "Search" %}
-		<link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic%7CVolkhov%7COpen+Sans:700%7CProduct+Sans' rel='stylesheet' type='text/css'>
-		{% else %}
 		<link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic%7CVolkhov%7COpen+Sans:700' rel='stylesheet' type='text/css'>
-		{% endif %}
 	</noscript>
 
 
