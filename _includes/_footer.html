@@ -47,7 +47,7 @@
             {% for network_item in site.data.network %}
               {% if network_item.url contains 'http' %}{% assign domain = '' %}{% else %}{% assign domain = site.url + site.baseurl %}{% endif %}
                 <li {% if network_item.class %}class="{{ network_item.class }}" {% endif %}>
-                  <a href="{{ domain }}{{ network_item.url }}" {% if network_item.url contains 'http' %}target="_blank" {% endif %} title="{{ network_item.title }}">{{ network_item.name }}</a>
+                  <a href="{{ domain }}{{ network_item.url }}" {% if network_item.url contains 'http' %}target="_blank" {% endif %} title="{{ network_item.title }}">{{ network_item.name }}{% if network_item.url contains 'http' %} <i class="fa fa-fw fa-external-link"></i>{% endif %}</a>
                 </li>
             {% endfor %}
             </ul>
