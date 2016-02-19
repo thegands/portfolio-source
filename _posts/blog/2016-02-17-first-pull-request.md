@@ -14,6 +14,7 @@ header: no
 image:
     title: first-pull-request.png
     thumb: first-pull-request-thumb.png
+comments: true
 ---
 During my coursework on learn.co I have submitted [numerous GitHub pull requests][1] but the vast majority have not been merged[^1] and none of them have been for an actual bug fix. I am still very much learning and trying to get comfortable with all the aspects of web development. A week ago, I wouldn't have believed that I would even be capable of finding a bug in a popular piece of software on GitHub, let alone fixing it. But just a couple days ago [I submitted a pull request][2] for a bug in the [Jekyll theme][3] I am using for my site and, to my delight, the author accepted it!
 
