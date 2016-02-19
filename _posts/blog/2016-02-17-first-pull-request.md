@@ -19,7 +19,7 @@ During my coursework on learn.co I have submitted [numerous GitHub pull requests
 
 <blockquote>A week ago, I wouldn't have believed that I would even be capable of finding a bug in a popular piece of software on GitHub, let alone fixing it.</blockquote>
 
-The bug itself was a disappearing element in the navbar that would only occur on medium size screens. I first noticed it when I was navigating my website with Chrome's developer tools open on the side. I immediately felt anxiety because my first thought was that I screwed something up and I would have to figure out and undo the foolish mistake I had made. Then it occurred to me that it could also be affecting the [»Feeling Responsive«][3] theme I am using. I was relieved to see the bug present in the »Feeling Responsive« demo page and I realized I had an opportunity to help improve a piece of software that helped improve my portfolio tremendously! But first I had to figure out what was causing the bug and how exactly to fix it.
+The bug itself was a disappearing element in the navbar that would only occur on medium size screens. I first noticed it when I was navigating my website with Chrome's developer tools open on the side. I immediately felt anxiety because my first thought was that I screwed something up and I would have to figure out and undo the foolish mistake I had made. Then it occurred to me that it could also be affecting the [»Feeling Responsive«][3] theme I am using. I was relieved to see the bug present in the [»Feeling Responsive«][3] demo page and I realized I had an opportunity to help improve a piece of software that helped improve my portfolio tremendously! But first I had to figure out what was causing the bug and how exactly to fix it.
 
 ## Developer Tools to the Rescue!
 I wasted a lot of time trying to figure it out but eventually I found that if I inspected the element that was disappearing I could view it's class names. One stood out to me as a good descriptor of the element that was disappearing: `parent-link`. Once I was armed with a good descriptor keyword I searched for it in all of the source files of the author's branch of my code's repository[^2]. I suspected it was a JavaScript function that was causing it to disappear and sure enough the only result was a JavaScript file! I saw that the JavaScript function was inserting the mobile subnav elements with the foundation class `show-for-small-only`. That class appeared to be causing that particular element to only show on small screen devices when I needed the element to show for small screen devices *and* medium screen devices.
@@ -43,12 +43,13 @@ I realized that by figuring out a fix for the bug and submitting the pull reques
   <a class="close-reveal-modal">&#215;</a>
 </div>
 
-[1]: https://github.com/pulls?q=is%3Apr+author%3Athegands
+[1]: https://github.com/search?q=author%3Athegands+is%3Apr&type=Issues
 [2]: https://github.com/Phlow/feeling-responsive/pull/87
 [3]: http://phlow.github.io/feeling-responsive/
 [4]: http://foundation.zurb.com/sites/docs/v/5.5.3/components/visibility.html
 [5]: https://github.com/Phlow
 [6]: http://www.twitch.tv/thegands
+[7]: https://github.com/Phlow/feeling-responsive/
 
 [^1]: GitHub pull requests are used by learn.co to submit and record students' work.
-[^2]: I forked »Feeling Responsive« to create my website so the all I have to do is change branches to view the author's code!
+[^2]: I forked [»Feeling Responsive«][7] to create my website so the all I have to do is change branches to view the author's code!
