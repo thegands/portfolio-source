@@ -2,62 +2,37 @@
 layout: page
 title: "About Me"
 #subheadline: "Why another Jekyll Theme?"
-teaser: "I'm a born and raised Coloradan that loves computers, virtual 3D and programming for the web!"
+teaser: "Gandhi is a full time nerd born and raised in Colorado"
 permalink: "/about/"
 header:
     image_fullwidth: "header_mountain.jpg"
 ---
-{% comment %}
-...and learn at the same time.
+Hello, my name is Gandhi and I love developing for and working with the web. I know what you must be thinking: is Gandhi really your name?? I can assure you that Gandhi *is* my real name. I am a peaceful person, what can I say?
+<blockquote>I know what you must be thinking: is Gandhi really your name??</blockquote>
+I am usually quiet but always thoughtful. I have a mind for problem solving and I love helping others especially when it's a computer or mathematic problem. For the past four years I have worked at a real estate title company but I have decided to try a new and more rewarding career path.
 
-*Feeling Responsive* is my first theme which I let into the world. It's built on work and knowledge of others. While I am still designing it, you read about whats behind this theme in the – *hopefully* – near future.
+# Skills
 
+I can muck about and get things accomplished with:
 
-## Features
+<div id="skills-list">
+<h2><i class="fa fa-fw fa-html5"></i> HTML5</h2>
 
-* [Responsive Gallery][8], [Videos][9], [Grid][10], [Typography][11],...
-* 100% GitHub Pages friendly
-* Easy editable navigation, footer and social media links
-* Language Ready – just translate one file.
-* Lots of possibilities to customize it to your needs
-* Lots of different headers
-* Various post formats to let your content shine
-* Uses Jekyll 3.0
-* Multiple possibilities to use images in different ways
-* Fine typography
-* Play Video and Audio with [Mediaelement.js][12]
+<h2><i class="fa fa-fw fa-css3"></i> CSS3</h2>
 
+<h2><i class="fa fa-fw fa-diamond"></i> Ruby</h2>
 
+<h2><span id="span-php"><?></span> PHP</h2>
+</div>
 
-## I got inspired by...
+I also have some experience with setting up a simple site with the CodeIgniter framework.
 
-[Michael Rose][1] and his fabulous [themes for jekyll][2]. Authors of [A List Apart][4] and [Smashing Magazine][5] since 2002. [GitHub][6] and how they built such a habitat for cooperation worldwide. [Automattic][3] and how they built a fantastic community around WordPress. And many, many more...
+# Interests
 
-Please make *Feeling Responsive* yours and if you like it, please link back to my homebase <a href="http://phlow.de/">Phlow</a>. That would be awesome.
+I am a nerd for the Internet, knowledge and entertainment. One of the places you will see me most is at my computer. If I'm not browsing reddit or playing videos games then I'm probably coding. I have an appetite for knowledge and there is always more programming to learn!
 
-#### Since then, fork it!
+I live in Denver and will often enjoy the beautiful sunny weather by taking a ride through nearby foothills on my bicycle. I also like to push myself at the climbing gym by bouldering and route climbing.
 
-Yours sincerelly, [Moritz »mo.« Sauer][7]
+I am obsessed with 3D ever since I learned Magic Eye as a kid. Virtual 3D is even more fascinating for me; I even learned how to watch 3D YouTube videos crosseyed![^1] I love anime and my favorite anime series is Samurai Champloo. If I'm listening to music and bobbing my head you can bet I'm listening to hip hop!
 
-
- [1]: http://mademistakes.com/about/
- [2]: http://mademistakes.com/work/jekyll-themes/
- [3]: http://automattic.com/
- [4]: http://alistapart.com/
- [5]: http://www.smashingmagazine.com/
- [6]: https://github.com/
- [7]: http://sauer.io
- [8]: {{ site.url }}/design/gallery/
- [9]: {{ site.url }}/design/video/
- [10]: {{ site.url }}/design/grid/
- [11]: {{ site.url }}/design/typography/
- [12]: {{ site.url }}/design/mediaelement_js/
- [13]: #
- [14]: #
- [15]: #
- [16]: #
- [17]: #
- [18]: #
- [19]: #
- [20]: #
-{% endcomment %}
+[^1]: I have not suffered any vision loss, in case you were wondering
