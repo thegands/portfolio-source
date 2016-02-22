@@ -53,10 +53,14 @@ div#___gcse_0 {
 
 .project-item {
   &> a {
+    color: $ci-2;
+    &:hover {
+      color: $ci-1;
+    }
     &> i {
-      font-size: 5em;
       display: block;
       margin: auto;
+      text-shadow: rgba(0, 0, 0, 0.49804) 0px 1px 6px;
     }
     &> h4 {
       text-align: center;
@@ -65,8 +69,15 @@ div#___gcse_0 {
   }
   dd {
     margin-left: 0;
-    .fa-github-square {
-      font-size: 2em;
+  }
+  div.content {
+    p {
+      clear: both;
+      border-top: 1px dotted #D7D7D7;
+    }
+    ul {
+      list-style: none;
+      margin-left: 0;
     }
   }
 }
