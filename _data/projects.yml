@@ -1,0 +1,20 @@
+- name: "LinkPlayer"
+  url: "http://lipl.website/"
+  gh: "https://github.com/thegands/"
+  icon: fa-play-circle-o
+  tech: "Bootstrap, PHP, CodeIgniter"
+  description: "Play video links with an HTML5 video player"
+
+- name: "List Pull Requests"
+  url: "https://rubygems.org/gems/list-pull-requests"
+  gh: "https://github.com/thegands/list_pull_requests"
+  icon: fa-terminal
+  tech: "Ruby"
+  description: "A ruby gem that lists the pull requests of a GitHub user"
+
+- name: "This Site"
+  url: "/"
+  gh: "https://github.com/thegands/thegands.github.io"
+  icon: fa-bullseye
+  tech: "Foundation, Jekyll"
+  description: "This website!"

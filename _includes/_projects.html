@@ -1,0 +1,21 @@
+
+<ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
+  {% for project in site.data.projects %}
+  {% if project.url contains 'http' %}{% assign urldomain = '' %}{% else %}{% assign urldomain = site.url + site.baseurl %}{% endif %}
+  {% if project.gh contains 'http' %}{% assign ghdomain = '' %}{% else %}{% assign ghdomain = site.url + site.baseurl %}{% endif %}
+  <li class="project-item">
+    <a href="{{ urldomain }}{{ project.url }}"{% if project.url contains 'http' %} target="_blank"{% endif %}>
+      <i class="fa fa-fw {{ project.icon }}"></i>
+      <h4>{{ project.name }}</h4>
+    </a>
+    <dl class="accordion" data-accordion>
+      <dd class="accordion-navigation">
+        <a href="#panel{{ forloop.index }}"><i class="fa fa-chevron-right fa-fw"></i><i class="fa fa-chevron-down fa-fw"></i> Details</a>
+        <div id="panel{{ forloop.index }}" class="content">
+          <p><a href="{{ ghdomain }}{{ project.gh }}"{% if project.gh contains 'http' %} target="_blank"{% endif %}><i class="fa fa-github-square"></i>Tech: {{ project.tech }}</a></p>
+          <p>{{ project.description }}</p>
+        </div>
+      </dd>
+    </dl>
+  </li>
+  {% endfor %}

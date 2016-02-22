@@ -48,3 +48,25 @@ div#___gcse_0 {
     box-sizing: content-box;
   }
 }
+
+// Projects Item
+
+.project-item {
+  &> a {
+    &> i {
+      font-size: 5em;
+      display: block;
+      margin: auto;
+    }
+    &> h4 {
+      text-align: center;
+      margin: 4px 0 8px;
+    }
+  }
+  dd {
+    margin-left: 0;
+    .fa-github-square {
+      font-size: 2em;
+    }
+  }
+}
