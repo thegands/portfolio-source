@@ -43,7 +43,7 @@ The application simply did not work after indiscriminately replacing code and I 
 4. Add code to create a users table into the migration file and make any other desired adjustments.
 5. Push your changes to OpenShift for deployment:
     5. `git add .`
-    5. `git commit -am "First OpenShift push!"`
+    5. `git commit -m "First OpenShift push!"`
     5. `git push`
 
 ## Troubleshooting and Maintenance
@@ -68,7 +68,7 @@ If you are getting server errors on your deployed application and not on your co
 
 <hr>
 
-If your OpenShift application is experiencing gem or dependency issues, first run `bundle install` in your code's local repo. Then create an empty file `touch ./.openshift/markers/force_clean_build`. Commit and push the changes. Pushing your code with the empty file <mark>force_clean_build</mark> in the markers directory forces OpenShift to run a clean bundle install on your application for every push. Running `rhc env set BUNDLE_WITHOUT='development test' -a MyRubyApp` will prevent OpenShift from installing unnecessary gems during this step. You only need to set the environment variable once - it will be remembered by the app.
+If your OpenShift application is experiencing gem or dependency issues, first run `bundle install --without production` in your code's local repo and push the changes if your <mark>Gemfile.lock</mark> file changed. If it did not change or it still does not work, create an empty file from your code repo `touch ./.openshift/markers/force_clean_build`. Commit and push the changes. Pushing your code with a file <mark>force_clean_build</mark> in the markers directory forces OpenShift to run a clean bundle install on your application for every push. Running `rhc env set BUNDLE_WITHOUT='development test' -a MySinatraApp` before pushing a force clean will prevent OpenShift from installing unnecessary gems. You only need to set the environment variable once - it will be remembered by the app.
 
 <hr>
 
