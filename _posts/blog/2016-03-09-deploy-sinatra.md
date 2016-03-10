@@ -20,7 +20,7 @@ If you have a Sinatra application that you want to deploy to the web but are uns
 After learning how to build a Ruby application with Sinatra, I immediately wanted to throw a simple app up on the web and play around with it, maybe even show it off. Being always frugal, I wanted to do this with a reliable and also free of charge hosting service, two things that are not usually provided together. Heroku seemed to be the obvious choice, even [The Ruby on Rails Tutorial][2] suggests [deploying your first Rails app to Heroku][3].
 
 ## OpenShift over Heroku
-I chose Red Hat's [OpenShift][4] service instead of Heroku for one reason: Heroku's [free tier][5] imposes mandatory idling on your app, forcing it offline 25% of every day. OpenShift's apps will happily serve content all day as long as there are no hiccups in their infrastructure. Don't get me wrong, Heroku provides amazing an amazing service for free. It would not even surprise me if it would have been easier to get a Sinatra app online on Heroku instead of OpenShift. But Heroku's mandatory idling was simply unacceptable for me. Luckily, I thought, OpenShift had a Sinatra QuickStart to instantly deploy a working foundation of a Sinatra app!
+I chose Red Hat's [OpenShift][4] service instead of Heroku for one reason: Heroku's [free tier][5] imposes mandatory idling on your app, forcing it offline 25% of every day. OpenShift's apps will happily serve content all day as long as there are no hiccups in their infrastructure. Don't get me wrong, Heroku provides an amazing service for free. It would not even surprise me if it would have been easier to get a Sinatra app online on Heroku instead of OpenShift. But Heroku's mandatory idling was simply unacceptable for me. Luckily, I thought, OpenShift had a Sinatra QuickStart to instantly deploy a working foundation of a Sinatra app!
 
 Upon using OpenShift's [Sinatra QuickStart][6] I soon discovered that it would only function out of the box with OpenShift's Ruby 1.9 'cartridge'. There was even a [3 month old issue on GitHub][7] for it with no apparent solution. Since I didn't want to get shut out of being able to use fun Ruby 2 features like [keyword arguments][8], I set out to get the Sinatra QuickStart working under OpenShift's Ruby 2.0 cartridge. Turns out all it took was a [simple tweak to the <mark>Gemfile.lock</mark>][10] file! Having figured that out I was ready to get an app online.
 
@@ -68,7 +68,7 @@ If you are getting server errors on your deployed application and not on your co
 
 <hr>
 
-If your OpenShift application is experiencing gem or dependency issues, first run `bundle install` in your code's local repo. Then create an empty file `touch ./.openshift/markers/force_clean_build`. Commit and push the changes. Pushing your code with the empty file <mark>force_clean_build</mark> forces OpenShift to run a clean bundle install on your application's gemfile.
+If your OpenShift application is experiencing gem or dependency issues, first run `bundle install` in your code's local repo. Then create an empty file `touch ./.openshift/markers/force_clean_build`. Commit and push the changes. Pushing your code with the empty file <mark>force_clean_build</mark> in the markers directory forces OpenShift to run a clean bundle install on your application for every push.
 
 <hr>
 
