@@ -68,7 +68,7 @@ If you are getting server errors on your deployed application and not on your co
 
 <hr>
 
-If your OpenShift application is experiencing gem or dependency issues, first run `bundle install` in your code's local repo. Then create an empty file `touch ./.openshift/markers/force_clean_build`. Commit and push the changes. Pushing your code with the empty file force_clean_build forces OpenShift to run a clean bundle install on your application's gemfile.
+If your OpenShift application is experiencing gem or dependency issues, first run `bundle install` in your code's local repo. Then create an empty file `touch ./.openshift/markers/force_clean_build`. Commit and push the changes. Pushing your code with the empty file <mark>force_clean_build</mark> forces OpenShift to run a clean bundle install on your application's gemfile.
 
 <hr>
 
