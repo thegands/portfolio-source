@@ -15,7 +15,7 @@ image:
     thumb: sinatra-thumb.png
 comments: true
 ---
-If you have a Sinatra application that you want to deploy to the web but are unsure of how to go about doing so, you've come to the right place! This article will help you get a Sinatra application online in less than 10 minutes. It will have integrated MySQL database capability with all the gems and MVC coding conventions familiar to learn.co students starting their [Sinatra Assessment][1]. If you want to get straight to the instructions and skip my spiel, <a href="#deployment-eta--10-minutes">click here</a>.
+If you have a Sinatra application that you want to deploy to the web but are unsure of how to go about doing so, you've come to the right place! This article will help you get a Sinatra application online in less than 10 minutes. Your application will have an integrated MySQL database with all the gems and MVC coding conventions familiar to learn.co students starting their [Sinatra Assessment][1]. If you want to get straight to the instructions and skip my spiel, <a href="#deployment-eta--10-minutes">click here</a>.
 
 After learning how to build a Ruby application with Sinatra, I immediately wanted to throw a simple app up on the web and play around with it, maybe even show it off. Being always frugal, I wanted to do this with a reliable and also free of charge hosting service, two things that are not usually provided together. Heroku seemed to be the obvious choice, even [The Ruby on Rails Tutorial][2] suggests [deploying your first Rails app to Heroku][3].
 
@@ -68,7 +68,7 @@ If you are getting server errors on your deployed application and not on your co
 
 <hr>
 
-If your OpenShift application is experiencing gem or dependency issues, first run `bundle install --without production` in your code's local repo and push the changes if your <mark>Gemfile.lock</mark> file changed. If it did not change or it still does not work, create an empty file from your code repo `touch ./.openshift/markers/force_clean_build`. Commit and push the changes. Pushing your code with a file named <mark>force_clean_build</mark> in the markers directory forces OpenShift to run a clean bundle install on your application for every push. Running `rhc env set BUNDLE_WITHOUT='development test' -a MySinatraApp` before pushing a force clean will prevent OpenShift from installing unnecessary gems. You only need to set the environment variable once - it will be remembered by the app.
+If your OpenShift application is experiencing gem or dependency issues, first run `bundle install --without production` in your code's local repo and push the changes if your <mark>Gemfile.lock</mark> file changed. If it did not change or it still does not work, create an empty file from your code repo by running `touch ./.openshift/markers/force_clean_build`. Commit and push the changes. Pushing your code with a file named <mark>force_clean_build</mark> in the markers directory forces OpenShift to run a clean bundle install on your application for every push. Running `rhc env set BUNDLE_WITHOUT='development test' -a MySinatraApp` before pushing a force clean will prevent OpenShift from installing unnecessary gems. You only need to set the environment variable once - it will be remembered by the app.
 
 <hr>
 
