@@ -81,3 +81,13 @@ div#___gcse_0 {
     }
   }
 }
+
+// Fix topbar covering content of anchor links
+*:target:not([id^='fn:']):not([id^='fnref:'])::before {
+    content: " ";
+    width: 0;
+    height: 0;
+    display: block;
+    padding-top: 50px;
+    margin-top: -50px;
+}

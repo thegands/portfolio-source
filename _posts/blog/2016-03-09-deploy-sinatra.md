@@ -33,7 +33,7 @@ The application simply did not work after indiscriminately replacing code and I 
 1. Sign up for a [free OpenShift account][11].
 2. [Install the OpenShift client tool][12]: `sudo gem install rhc`
 3. [Setup rhc][13]: `rhc setup` & follow the prompts.
-4. [Create your Sinatra app using my Quickstart][14]: `rhc app create MySinatraApp ruby-2.0 mysql-5.5 phpmyadmin --from-code=git://github.com/thegands/sinatra-mysql.git` _and be **patient**, it can take several minutes._
+4. [Create your Sinatra app using my Quickstart][14]: `rhc app create MySinatraApp ruby-2.0 mysql-5.5 phpmyadmin --from-code=git://github.com/thegands/sinatra-mysql.git -e BUNDLE_WITHOUT='development test'` _and be **patient**, it can take several minutes._
 5. Visit your newly created application's webpage by clicking the <i class="fa fa-external-link"></i> icon near your application's name in the [OpenShift Dashboard][15]. If everything went according to plan you should see an all white page with the words "Sinatra is up!". Congrats!
 
 ## Start Coding!
@@ -68,7 +68,7 @@ If you are getting server errors on your deployed application and not on your co
 
 <hr>
 
-If your OpenShift application is experiencing gem or dependency issues, first run `bundle install --without production` in your code's local repo and push the changes if your <mark>Gemfile.lock</mark> file changed. If it did not change or it still does not work, create an empty file from your code repo `touch ./.openshift/markers/force_clean_build`. Commit and push the changes. Pushing your code with a file <mark>force_clean_build</mark> in the markers directory forces OpenShift to run a clean bundle install on your application for every push. Running `rhc env set BUNDLE_WITHOUT='development test' -a MySinatraApp` before pushing a force clean will prevent OpenShift from installing unnecessary gems. You only need to set the environment variable once - it will be remembered by the app.
+If your OpenShift application is experiencing gem or dependency issues, first run `bundle install --without production` in your code's local repo and push the changes if your <mark>Gemfile.lock</mark> file changed. If it did not change or it still does not work, create an empty file from your code repo `touch ./.openshift/markers/force_clean_build`. Commit and push the changes. Pushing your code with a file named <mark>force_clean_build</mark> in the markers directory forces OpenShift to run a clean bundle install on your application for every push. Running `rhc env set BUNDLE_WITHOUT='development test' -a MySinatraApp` before pushing a force clean will prevent OpenShift from installing unnecessary gems. You only need to set the environment variable once - it will be remembered by the app.
 
 <hr>
 
