@@ -77,7 +77,7 @@ If you find any issues you would like to raise with my Sinatra-MySQL QuickStart,
 OpenShift also provides [valuable information about their Ruby application hosting service][17] that is sure to come in handy!
 
 ## Show Appreciation?
-Did this guide help you get your app up and running? Did it just leave you frustrated and confused? Leave a comment with your experience down below!
+Did this guide help you get your app up and running? Did it just leave you frustrated and confused? <a href="#comments">Leave a comment</a> with your experience down below!
 
 ## Other Posts About Ruby
 {: .t60 }
