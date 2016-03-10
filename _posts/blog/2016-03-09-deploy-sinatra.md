@@ -2,7 +2,6 @@
 layout: page
 subheadline: Development
 title:  "Deploy a Sinatra App Fast"
-meta_teaser: "A guide to deploy a Sinatra app in less than 10 minutes - free!"
 teaser: "A guide to deploy a Sinatra app in less than 10 minutes - free!"
 breadcrumb: true
 tags:
