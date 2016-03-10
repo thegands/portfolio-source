@@ -38,13 +38,13 @@ The application simply did not work after indiscriminately replacing code and I 
 
 ## Start Coding!
 1. If you used rhc to create your Sinatra application in the previous step, #4, the application code was already cloned to your local drive and you can skip to the next step. Otherwise, clone your OpenShift code repo to your local drive using the address from the application's page on your [OpenShift account dashboard][15]: `git clone <Your application's SSH Source Code address>`
-2. Change your directory to the cloned code repo and create a migration file: `rake db:create_migration NAME=create_users`
-3. Add code to create a users table into the migration file and make any other desired adjustments.
-4. Push your changes to OpenShift for deployment:
-    4. `git add .`
-    4. `git commit -am "First OpenShift push!"`
-    4. `git push`
-5. Profit!
+2. Change your directory to the cloned code repo and use bundler to ensure you have all the required gems: `bundle install --without production`
+3. Create a migration file: `rake db:create_migration NAME=create_users`
+4. Add code to create a users table into the migration file and make any other desired adjustments.
+5. Push your changes to OpenShift for deployment:
+    5. `git add .`
+    5. `git commit -am "First OpenShift push!"`
+    5. `git push`
 
 ## Troubleshooting and Maintenance
 If you added some database functionality to your website through a model class, you may have noticed that your application no longer functions and returns an Internal Server Error (500). That is because even though you created and pushed the migration file, we still need to tell the server to execute it and create the users table in the database:
@@ -68,7 +68,7 @@ If you are getting server errors on your deployed application and not on your co
 
 <hr>
 
-If your OpenShift application is experiencing gem or dependency issues, first run `bundle install` in your code's local repo. Then create an empty file `touch ./.openshift/markers/force_clean_build`. Commit and push the changes. Pushing your code with the empty file <mark>force_clean_build</mark> in the markers directory forces OpenShift to run a clean bundle install on your application for every push.
+If your OpenShift application is experiencing gem or dependency issues, first run `bundle install` in your code's local repo. Then create an empty file `touch ./.openshift/markers/force_clean_build`. Commit and push the changes. Pushing your code with the empty file <mark>force_clean_build</mark> in the markers directory forces OpenShift to run a clean bundle install on your application for every push. Running `rhc env set BUNDLE_WITHOUT='development test' -a MyRubyApp` will prevent OpenShift from installing unnecessary gems during this step. You only need to set the environment variable once - it will be remembered by the app.
 
 <hr>
 
