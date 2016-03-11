@@ -36,13 +36,13 @@ The application simply did not work after indiscriminately replacing code and I 
 5. Visit your newly created application's webpage by clicking the <i class="fa fa-external-link"></i> icon near your application's name in the [OpenShift Dashboard][15]. If everything went according to plan you should see an all white page with the words "Sinatra is up!". Congrats!
 
 ## Start Coding!
-1. If you used rhc to create your Sinatra application in the previous step, #4, the application code was already cloned to your local drive and you can skip to the next step. Otherwise, clone your OpenShift code repo to your local drive using the address from the application's page on your [OpenShift account dashboard][15]: `git clone <Your application's SSH Source Code address>`
-2. Change your directory to the cloned code repo and use bundler to ensure you have all the required gems: `bundle install --without production`
+1. Change your directory to the code repo that was cloned by rhc: `cd mysinatraapp`
+2. Use bundler to ensure you have all the required gems: `bundle install --without production`
 3. Create a migration file: `rake db:create_migration NAME=create_users`
 4. Add code to create a users table into the migration file and make any other desired adjustments.
 5. Push your changes to OpenShift for deployment:
     5. `git add .`
-    5. `git commit -m "First OpenShift push!"`
+    5. `git commit -m "First OpenShift app push!"`
     5. `git push`
 
 ## Troubleshooting and Maintenance
