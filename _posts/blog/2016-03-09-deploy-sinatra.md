@@ -95,7 +95,7 @@ Did this guide help you get your app up and running? Did it just leave you frust
  [11]: https://www.openshift.com/app/account/new
  [12]: https://developers.openshift.com/en/getting-started-osx.html#client-tools
  [13]: https://developers.openshift.com/en/getting-started-osx.html#rhc-setup
- [14]: https://hub.openshift.com/quickstarts/deploy/245-sinatra-mysql
+ [14]: https://github.com/thegands/sinatra-mysql
  [15]: https://openshift.redhat.com/app/console/applications
  [16]: https://github.com/thegands/sinatra-mysql/issues/new
  [17]: https://developers.openshift.com/en/ruby-overview.html
