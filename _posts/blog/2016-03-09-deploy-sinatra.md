@@ -31,7 +31,7 @@ The application simply did not work after indiscriminately replacing code and I 
 ## Deployment ETA < 10 minutes
 1. Sign up for a [free OpenShift account][11].
 2. [Install the OpenShift client tool][12]: `sudo gem install rhc`
-3. [Setup rhc][13]: `rhc setup` & follow the prompts.
+3. [Setup rhc][13]: `rhc setup` & follow the prompts. *just press enter on the first pompt*
 4. [Create your Sinatra app using my Quickstart][14]: `rhc app create MySinatraApp ruby-2.0 mysql-5.5 phpmyadmin --from-code=git://github.com/thegands/sinatra-mysql.git -e BUNDLE_WITHOUT='development test'` _and be **patient**, it can take several minutes._
 5. Visit your newly created application's webpage by clicking the <i class="fa fa-external-link"></i> icon near your application's name in the [OpenShift Dashboard][15]. If everything went according to plan you should see an all white page with the words "Sinatra is up!". Congrats!
 
