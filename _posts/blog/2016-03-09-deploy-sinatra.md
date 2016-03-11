@@ -67,7 +67,7 @@ If you are getting server errors on your deployed application and not on your co
 
 <hr>
 
-If your OpenShift application is experiencing gem or dependency issues, first run `bundle install --without production` in your code's local repo and push the changes if your <mark>Gemfile.lock</mark> file changed. If it did not change or it still does not work, create an empty file from your code repo by running `touch ./.openshift/markers/force_clean_build`. Commit and push the changes. Pushing your code with a file named <mark>force_clean_build</mark> in the markers directory forces OpenShift to run a clean bundle install on your application for every push. Running `rhc env set BUNDLE_WITHOUT='development test' -a MySinatraApp` before pushing a force clean will prevent OpenShift from installing unnecessary gems. You only need to set the environment variable once - it will be remembered by the app.
+If your OpenShift application is experiencing gem or dependency issues, first run `bundle install --without production` in your code's local repo. Then create an empty file by running `touch ./.openshift/markers/force_clean_build`. Git add, commit and push the changes. Pushing your code with a file named <mark>force_clean_build</mark> in the markers directory forces OpenShift to run a clean bundle install on your application for every push. Running `rhc env set BUNDLE_WITHOUT='development test' -a MySinatraApp` before pushing a force clean will prevent OpenShift from installing unnecessary gems. You only need to set the environment variable once - it will be remembered by the app.
 
 <hr>
 
