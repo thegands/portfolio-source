@@ -14,7 +14,7 @@ image:
     thumb: sinatra-thumb.png
 comments: true
 ---
-If you have a Sinatra application that you want to deploy to the web but are unsure of how to go about doing so, you've come to the right place! This article will help you get a Sinatra application online in less than 10 minutes. Your application will have an integrated MySQL database with all the gems and MVC coding conventions familiar to learn.co students starting their [Sinatra Assessment][1]. If you want to get straight to the instructions and skip my spiel, <a href="#deployment-eta--10-minutes">click here</a>.
+If you have a Sinatra application that you want to deploy to the web but are unsure of how to go about doing so, you've come to the right place! This article will help you get a Sinatra application online in less than 10 minutes. Your application will have an integrated MySQL database with all the gems and MVC coding conventions familiar to learn.co students starting their [Sinatra Assessment][1]. If you want to get straight to the instructions and skip my spiel, [click here](#deployment-eta--10-minutes).
 
 After learning how to build a Ruby application with Sinatra, I immediately wanted to throw a simple app up on the web and play around with it, maybe even show it off. Being always frugal, I wanted to do this with a reliable and also free of charge hosting service, two things that are not usually provided together. Heroku seemed to be the obvious choice, even [The Ruby on Rails Tutorial][2] suggests [deploying your first Rails app to Heroku][3].
 

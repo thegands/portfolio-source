@@ -1,3 +1,13 @@
+- name: "Toast-It"
+  url: "http://ruby-thegands.rhcloud.com/toast-it"
+  gh: "https://github.com/thegands/toast-it"
+  icon: fa-beer
+  tech:
+    - name: Ruby
+    - name: Sinatra
+    - name: MaterializeCSS
+  description: "Reddit clone to demonstrate Sinatra CRUD"
+
 - name: "LinkPlayer"
   url: "http://lipl.website/"
   gh: "https://github.com/thegands/"

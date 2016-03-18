@@ -8,7 +8,7 @@ header:
     image_fullwidth: "header_mountain.jpg"
 ---
 Hello, my name is Gandhi and I love developing for and working with the web. I know what you must be thinking: is Gandhi really your name?? I can assure you that Gandhi *is* my real name. I am a peaceful person, what can I say?
-<blockquote>I know what you must be thinking: is Gandhi really your name??</blockquote>
+<blockquote>I know what you must be thinking: is Gandhi your real name??</blockquote>
 I am usually quiet but always thoughtful. I have a mind for problem solving and I love helping others especially when it's a computer or mathematic problem. For the past four years I have worked at a real estate title company but I have decided to try a new and more rewarding career path.
 
 # Skills
