@@ -28,23 +28,25 @@ If you have trouble with the front end like me, I really recommend checking out 
 
 My favorite aspect of Ruby CRUD application development is the database and the logic behind it. It's pretty amazing that Active Record can do so much for you from a simple database table and a declared but empty Ruby class. I have to suspect that half the magic of Ruby on Rails that I hear so much about comes directly from Active Record. The biggest detriment to all this magic is wading through documentation. Active Record does *so* much that trying to figure out a simple function can become a difficult journey through stackoverflow questions and answers, especially for a complete beginner like me. I endured a particularly difficult journey with Active Record's count method.
 
-## Array#count != ActiveRecord.count
+## Array#count != ActiveRecord#count
 
-One of the primary features of Reddit is the ability to upvote or downvote a post you like or dislike. Since this really is a defining aspect of Reddit, I wanted my site to feature upvoting and downvoting. Actually implementing was much harder than I thought it would be, mostly because I was not sure how to properly implement such a feature using a database. I settled on using a `Score` model with database objects having a one to many relationship with `User`. Each instance of a `Score` would also have a one to many relationship to either a `Topic` or `Comment` using a [polymorphic association][9]. When the topics are being displayed to a user of my application, each topic's and comment's score must be calculated by taking the difference of the positive and negative votes, or likes, associated with that instance of `Topic` or `Comment`.
+One of the primary features of Reddit is the ability to upvote or downvote a post you like or dislike. Since this really is a defining aspect of Reddit, I wanted my site to feature upvoting and downvoting. Actually implementing was much harder than I thought it would be, mostly because I was not sure how to properly implement such a feature using a database. I settled on using a `Score` model with database objects having a one to many relationship with `User`. Each instance of a `Score` would also have a one to many relationship to either a `Topic` or `Comment` using a [polymorphic association][9]. Every instance of `Score` would be also be required to have a `score_instance.liked` attribute of either `true` or `false`. When the topics are being displayed to a user of my application, each topic's and comment's score must be calculated by taking the difference of the positive and negative votes, or likes, associated with that instance of `Topic` or `Comment`.
 
-I was having trouble getting the `Score` Active Record class to tell me the number of instances of `Score` that had a liked attribute of `true`. Looking at the [Array#count][10] documentation I thought `Score.all.count { |s| s.liked }` would produce the desired result. After all, `Score.all` produces an array, right? But no matter what kind of scores I had available to my model, it would always tell me the number of `Score.count` instead of the ones that actually had a liked attribute of `true`. It drove me absolutely bonkers but eventually I learned that it was because I was not using [Array#count][10] at all! I was using [ActiveRecord.count][11] which was counting the `Score` instances that did not have a liked attribute of `nil`, which was all of them! This is distinctly different than [Array#count][10] method because [ActiveRecord.count { \|item\| block }][11] uses the [COUNT SQL statement][12] to produce the return value. This was a good lesson, I am now more aware of the kind of class I am working with and the kinds of methods it could possibly have available.
+I was having trouble getting the `Score` Active Record class to tell me the number of instances of `Score` that had a liked attribute of `true`. Looking at the [Array#count][10] documentation I thought `Score.all.count { |s| s.liked }` would produce the desired result. After all, `Score.all` produces an array, right? But no matter what kind of scores I had available to my model, it would always tell me the number of `Score.count` instead of the ones that actually had a liked attribute of `true`. It drove me absolutely bonkers but eventually I learned that it was because I was not using [Array#count][10] at all! I was using [ActiveRecord#count][11] which was counting the `Score` instances that did not have a liked attribute of `nil`, which was all of them! This is distinctly different than [Array#count][10] method because [ActiveRecord.count { \|item\| block }][11] uses the [COUNT SQL statement][12] to produce the return value. This was a good lesson, I am now more aware of the kind of class I am working with and the kinds of methods it could possibly have available.
 
-I am quite proud of counting code I ended up writing, if only because I had to use a bit of simple math to figure it out:
+## Counting Scores is Bad Design
+
+I am quite proud of the score counting code I ended up writing, if only because I had to use a bit of simple math to figure it out:
 
 ~~~
-Class Topic || class Comment
+class Topic && class Comment
   def score
    2 * Score.where(post: self, liked: true).count - self.scores.count
   end
 end
 ~~~
 
-This is essentially subtracting the total number of scores belonging to the topic from twice the amount of scores with a positive liked value. I like this way because it only makes my application count individual score attributes once. I love math so even figuring out a simple equation like this was fun for me. Let's start with the way we would normally think to count scores:
+This is essentially subtracting the total number of scores belonging to the topic from twice the amount of the topic's scores with a liked value of `true`. I like this way because it only makes my application count individual score attributes once for each topic/comment. I love math so even figuring out a simple equation like this was fun for me. Let's start with the way we would normally think to count scores:
 
 liked - disliked = score
 
@@ -55,11 +57,12 @@ liked + disliked = count of scores(votes)
 There are some similar looking variables there... Are you thinking what I'm thinking? Let's add them together!
 
 +liked -disliked = +score  
-+liked +disliked = +count
+<u>+liked +disliked = +count</u>  
+liked + liked = score + count
 
-***
+or
 
-liked + liked = 2 * liked = score + count
+2*liked = score + count
 
 If we subtract count from both sides we get:
 
@@ -67,13 +70,13 @@ If we subtract count from both sides we get:
 
 If you're still reading, I think you can agree, math is fun!
 
-In retrospect, that bit of code I'm so proud of will be one of the first things that I will refactor. It should not be hard to give the topics and comments table a new integer column named score and push logic into the `Score` model to increment or decrement it's associated `Topic` or `Comment` instance's score value in the table. That way the application does not have to calculate the score numerous times on each page request, it just grabs the score value from the table the same way the title or other content is grabbed from the database.
+In retrospect, that bit of code I'm so proud of will be one of the first things that I will refactor. It should not be hard to give the topics and comments table a new integer column named score and push logic into the models to increment or decrement the `Topic` or `Comment` instance's score value in the table. That way the application does not have to calculate the score numerous times on each page request, it just grabs the score value from the table the same way the title or other content is grabbed from the database.
 
 ## Still Not Good Enough
 
-Even though my project works as intended and ended up exceeding most of my initial expectations, I am still not satisfied with it so I still consider it a work in progress. Users of Reddit can reply to other people's comments and Reddit effectively nests and orders comments. I had a hard time conceptualizing how I would go about making that feature work but I believe all it would take is an `has_many :comments` addition to the `Comment` class/table. However, that introduces the problem of nesting comments and creating separate views for comment branches that are nested too deep to display properly on all screen sizes. All of this seemed like a headache so I opted to skip that feature for now and just allow comments to be made on topics without any nesting.
+Even though my project works as intended and ended up exceeding most of my initial expectations, I am still not satisfied with it so I still consider it a work in progress. Users of Reddit can reply to other people's comments and Reddit effectively nests and orders comments. I had a hard time conceptualizing how I would go about making that feature work but I believe all it would take is an `has_many :comments` addition to the `Comment` class/table. However, that introduces the problem of nesting comments and creating separate views for comment branches that are nested too deeply to display properly on all screen sizes. All of this seemed like a headache so I opted to skip that feature for now and just allow comments to be made on topics without any nesting.
 
-Another aspect of my application that I very much want to improve is the route that takes votes and creates instances of `Score`s. It is a terrible mess of nested if and else statements that I think could be refactored with a case statement or maybe even better logic in the Model. It was hard for me to figure out and the mess it turned out to be reflects that. It is fully functional though and for now that is all that counts!
+Another aspect of my application that I very much want to improve is the route that takes votes and creates instances of `Score`s. It is a terrible mess of nested if and else statements that I think could be refactored with a case statement or even better maybe even logic in the model. It was hard for me to figure out and the mess it turned out to be reflects that. It is fully functional though and for now that is all that counts!
 
 As the site is, no matter how many topics are posted on the site, they are all displayed on one page. This isn't a problem when there are only a handful of topics but it will be troublesome when there are hundreds of topics. Pagination is definitely a much needed feature but I think I might wait until I know how to make an infinite scrolling page with AJAX or similar to add that feature.
 
