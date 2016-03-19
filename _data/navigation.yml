@@ -8,6 +8,9 @@
   icon: fa-flask
   side: left
   dropdown:
+  - title: "Toast-It"
+    url: "http://ruby-thegands.rhcloud.com/toast-it"
+    icon: fa-beer
   - title: "LinkPlayer"
     url: "http://lipl.website/"
     icon: fa-play-circle-o
