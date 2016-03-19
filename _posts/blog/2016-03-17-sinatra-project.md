@@ -80,7 +80,7 @@ Another aspect of my application that I very much want to improve is the route t
 
 As the site is, no matter how many topics are posted on the site, they are all displayed on one page. This isn't a problem when there are only a handful of topics but it will be troublesome when there are hundreds of topics. Pagination is definitely a much needed feature but I think I might wait until I know how to make an infinite scrolling page with AJAX or similar to add that feature.
 
-There is also a search bar I lazily left in the Toast-It navbar that does not do anything at all, it is not even connected to a form. Ideally my app will have a simple search feature to display sorted results keyword searches.
+There is also a search bar I lazily left in the Toast-It navbar that does not do anything at all, it is not even connected to a form. Ideally my app will have a simple search feature to display the sorted results of a keyword search.
 
 I could keep going with Toast-It's current shortcomings but it seems like the more I write, the more things I think of! The site was a ton of fun to work on though so I'm looking forward to making these improvements and more in the future!
 
